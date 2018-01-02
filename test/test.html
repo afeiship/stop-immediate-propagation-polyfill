@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            border:1px solid #f00;
+            padding:20px;
+        }
+        #button1{
+            border:1px solid #00f;
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <button id="button1">TLDJLKFJFLDJF</button>
+    </div>
+    <script>
+        var div = document.getElementById("div1");
+        var btn = document.getElementById("button1");
+        var doc = document;
+
+        btn.addEventListener("click", function (e) {
+            alert("button 执行");
+        });
+        div.addEventListener("click", function (e) {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            alert("first exec!");
+        });
+        div.addEventListener("click", function (e) {
+            alert("second exec!");
+        });
+        doc.addEventListener('click',function(e){
+            alert('doc click!')
+        });
+    </script>
+</body>
+
+</html>
